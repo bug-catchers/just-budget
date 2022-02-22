@@ -18,3 +18,11 @@ Su Lao:
  - To Do:
    - Home page to explain the application
    - Footer with information about the application
+
+Shengtong Jin
+ - Completed:
+   - Budget plans schema
+   - Setup MangoDB to store budget plans
+ - To Do:
+   - Ability to edit budget plan
+   - Ability to to delete your own account
