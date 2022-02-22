@@ -25,7 +25,7 @@ Shengtong Jin
    - Setup MangoDB to store budget plans
  - To Do:
    - Ability to edit budget plan
-   - Ability to to delete your own account
+   - Admin page
 
 Ian Manzano:
 - Completed:
