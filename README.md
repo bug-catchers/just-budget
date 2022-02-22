@@ -13,8 +13,8 @@ Chak Hon Lam:
 
 Su Lao:
  - Completed:
-  - Page to display budget plans
-  - Page to create budget plans
+   - Page to display budget plans
+   - Page to create budget plans
  - To Do:
-  - Home page to explain the application
-  - Footer with information about the application
+   - Home page to explain the application
+   - Footer with information about the application
