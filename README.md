@@ -10,3 +10,11 @@ Chak Hon Lam:
    - Feedback page
    - Ability to edit budget plan
    - Ability to to delete your own account
+
+Su Lao:
+ - Completed:
+  - Page to display budget plans
+  - Page to create budget plans
+ - To Do:
+  - Home page to explain the application
+  - Footer with information about the application
