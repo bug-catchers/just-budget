@@ -26,3 +26,11 @@ Shengtong Jin
  - To Do:
    - Ability to edit budget plan
    - Ability to to delete your own account
+
+Ian Manzano:
+- Completed:
+    - Basic Login page
+    - Basic Sign Up page
+- To Do:
+    - Update UI to make application less boring
+    - Update UI to make everything fit and center
