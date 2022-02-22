@@ -29,7 +29,7 @@ class PlannersCollection {
       'changes.$.amount': {
         type: Number,
       },
-      endingBalance: { type: Number, optional: true, },
+      endingBalance: { type: Number, optional: true },
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
