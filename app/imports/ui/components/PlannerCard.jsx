@@ -34,6 +34,13 @@ class PlannerCard extends React.Component {
         this.reflectUpdate()));
   }
 
+  removeItem(changes) {
+    Planners.collection.update(this.props.planner._id, { $pull: { changes } },
+      (error) => (error ?
+        swal('Error', error.message, 'error') :
+        this.reflectUpdate()));
+  }
+
   render() {
     return (
       <Card color='green'>
@@ -47,7 +54,9 @@ class PlannerCard extends React.Component {
           <Card.Description>
             <Header as='h5'> Income/Spending: </Header>
             {_.map(this.props.planner.changes,
-              (change, index) => <p key={index}> {change.name}: {change.amount}</p>)}
+              (change, index) => <p key={index}> {change.name}: {change.amount}
+                <Icon color='red' name='trash alternate outline' onClick={() => this.removeItem(change)}/>
+              </p>)}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
