@@ -16,7 +16,7 @@ class NavBar extends React.Component {
           <Dropdown pointing="top left" icon={'bars'}>
             <Dropdown.Menu>
               <Dropdown.Item icon="home" text="Home" as={NavLink} activeClassName="" exact to="/"/>
-              {this.props.currentUser ? (
+              {(this.props.currentUser && !Roles.userIsInRole(Meteor.userId(), 'admin')) ? (
                 [<Dropdown.Item icon="edit" text="Budget Planners" as={NavLink} activeClassName="active" exact to="/planners" key='planners'/>,
                   <Dropdown.Item icon="list alternate outline" text="Create Planner" as={NavLink} activeClassName="active" exact to="/create_planner" key='create'/>,
                 ]
@@ -26,6 +26,11 @@ class NavBar extends React.Component {
               ) : ''}
             </Dropdown.Menu>
           </Dropdown>
+          {(this.props.currentUser && !Roles.userIsInRole(Meteor.userId(), 'admin')) ? (
+            [<Menu.Item as={NavLink} id='nav-planner' activeClassName="active" exact to="/planners" key='planners'>Budget Planners</Menu.Item>,
+              <Menu.Item as={NavLink} id='nav-create-planner' activeClassName="active" exact to="/create_planner" key='create'>Create Planner</Menu.Item>,
+            ]
+          ) : ''}
         </Menu.Item>
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

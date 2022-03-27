@@ -22,6 +22,11 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 /** Renders the Page for adding a document. */
 class CreatePlanner extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.selectRef = React.createRef();
+  }
+
   // On submit, insert the data.
   submit(data, formRef) {
     const { year, month, initialBalance } = data;
@@ -42,15 +47,15 @@ class CreatePlanner extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid container centered>
+      <Grid container centered id='create-planner-page'>
         <Grid.Column>
           <Header as="h2" textAlign="center">Create a new Planner</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>
-              <NumField name='year' decimal={false}/>
-              <SelectField name='month'/>
-              <NumField name='initialBalance' decimal/>
-              <SubmitField value='Create'/>
+              <NumField name='year' decimal={false} id='create-planner-year'/>
+              <SelectField name='month' id='create-planner-month'/>
+              <NumField name='initialBalance' decimal id='create-planner-balance'/>
+              <SubmitField value='Create' id='create-planner-create'/>
               <ErrorsField/>
             </Segment>
           </AutoForm>
