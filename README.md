@@ -35,22 +35,22 @@ Ian Manzano:
     - Update UI to make application less boring
     - Update UI to make everything fit and center
 
-# Update 3/28/2022
+### Update 3/28/2022
 [Link to project](https://github.com/bug-catchers/just-budget)
 
  - New progress
-  - Added Feedback page
-  - Ability to edit budget plan
-  - Home page to explain the application
-  - Footer with information about the application
-  - Testcafe test for budget page
-  - Update UI to make application less boring
-  - Update UI to make everything fit and center
+   - Added Feedback page
+   - Ability to edit budget plan
+   - Home page to explain the application
+   - Footer with information about the application
+   - Testcafe test for budget page
+   - Update UI to make application less boring
+   - Update UI to make everything fit and center
  - Pending
-  - Testcafe test plan for rest of the pages
-  - Admin page
-  - UI for the new pages
-  - Clean up 
+   - Testcafe test plan for rest of the pages
+   - Admin page
+   - UI for the new pages
+   - Clean up 
 
 Chak Hon Lam:
  - Completed:
