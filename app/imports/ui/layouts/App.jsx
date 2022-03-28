@@ -17,6 +17,7 @@ import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import CreatePlanner from '../pages/CreatePlanner';
 import BudgetPlanners from '../pages/BudgetPlanners';
+import Feedback from '../pages/Feedback';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
             <ProtectedRoute path="/planners" component={BudgetPlanners}/>
             <ProtectedRoute path="/create_planner" component={CreatePlanner}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+            <ProtectedRoute path="/feedback" component={Feedback}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>
