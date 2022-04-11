@@ -21,10 +21,14 @@ class PlannerCard extends React.Component {
 
   reflectUpdate() {
     const endingBalance = this.props.planner.initialBalance + _.reduce(this.props.planner.changes, function (memo, change) { return memo + change.amount; }, 0);
-    Planners.collection.update(this.props.planner._id, { $set: { endingBalance } },
-      (error) => (error ?
-        swal('Error', error.message, 'error') :
-        swal('Success', 'Planner updated successfully', 'success')));
+    if (Number.MIN_SAFE_INTEGER < endingBalance && endingBalance < Number.MAX_SAFE_INTEGER) {
+      Planners.collection.update(this.props.planner._id, { $set: { endingBalance } },
+        (error) => (error ?
+          swal('Error', error.message, 'error') :
+          swal('Success', 'Planner updated successfully', 'success')));
+    } else {
+      swal('Error', `This budget planner ends balance exceeding the safe limit (-+${Number.MAX_SAFE_INTEGER}). \nPlease create a new planner`, 'error');
+    }
   }
 
   submit(changes) {
