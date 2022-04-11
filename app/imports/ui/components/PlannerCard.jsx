@@ -86,7 +86,7 @@ class PlannerCard extends React.Component {
                   <ErrorsField/>
                 </Modal.Content>
                 <Modal.Actions>
-                  <Button color='red' inverted>
+                  <Button color='red' inverted onClick={() => this.setState({ prompt: false })}>
                     <Icon name='remove'/> Cancel
                   </Button>
                   <SubmitField value='Create'/>

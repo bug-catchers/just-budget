@@ -37,7 +37,11 @@ class CreatePlanner extends React.Component {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Planner created successfully', 'success');
+          if (Number.MIN_SAFE_INTEGER < initialBalance && initialBalance < Number.MAX_SAFE_INTEGER) {
+            swal('Success', 'Planner created successfully', 'success');
+          } else {
+            swal('Warning', `Planner created successfully, but the initial balance is outside the safe boundary (-+${Number.MAX_SAFE_INTEGER})`, 'warning');
+          }
           formRef.reset();
         }
       });
