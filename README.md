@@ -94,3 +94,67 @@ Ian Manzano:
    - UI for the new pages
  - Next:
    - UI related issues
+
+### Update 4/11/2022
+[Link to project](https://github.com/bug-catchers/just-budget)
+
+- New progress
+   - Added Feedback page
+   - Ability to edit budget plan
+   - Home page to explain the application
+   - Footer with information about the application
+   - Testcafe test for budget page
+   - Update UI to make application less boring
+   - Update UI to make everything fit and center
+   - Admin page
+   - Clean up
+   - UI for the new pages
+- Pending
+   - Testcafe test plan for rest of the pages
+
+Chak Hon Lam:
+- Completed:
+   - Button and Modal to add spending/income
+   - Functions to update and calculate spending
+   - Feedback page
+   - Ability to edit budget plan
+- Current:
+   - Testcafe for rest of the site
+- Next:
+   - Testcafe for rest of the site
+
+Su Lao:
+- Completed:
+   - Page to display budget plans
+   - Page to create budget plans
+   - Home page to explain the application
+   - Footer with information about the application
+   - Testcafe test for budget page
+- Current:
+   - Testcafe for login/signup page
+- Next:
+   - Testcafe for rest of the site
+
+Shengtong Jin:
+- Completed:
+   - Budget plans schema
+   - Setup MangoDB to store budget plans
+   - Clean up
+   - Improve feedback page
+   - Bug fix
+- Current:
+   - Bug fix
+- Next:
+   - Minor bug fix
+
+Ian Manzano:
+- Completed:
+   - Basic Login page
+   - Basic Sign Up page
+   - Update UI to make application less boring
+   - Update UI to make everything fit and center
+   - UI for the new pages
+- Current:
+   - UI related issues
+- Next:
+   - UI related issues

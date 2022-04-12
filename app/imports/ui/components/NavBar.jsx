@@ -21,9 +21,6 @@ class NavBar extends React.Component {
                   <Dropdown.Item icon="list alternate outline" text="Create Planner" as={NavLink} activeClassName="active" exact to="/create_planner" key='create'/>,
                 ]
               ) : ''}
-              {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Dropdown.Item icon="wrench" text="Admin" as={NavLink} activeClassName="active" exact to="/admin" key='admin'/>
-              ) : ''}
             </Dropdown.Menu>
           </Dropdown>
           {(this.props.currentUser && !Roles.userIsInRole(Meteor.userId(), 'admin')) ? (
