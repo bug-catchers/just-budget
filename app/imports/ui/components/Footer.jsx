@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
-    const divStyle = { paddingTop: '15px' };
+    const divStyle = { paddingTop: '15px', paddingBottom: '15px' };
     return (
       <footer>
         <div style={divStyle} className="ui center aligned container">

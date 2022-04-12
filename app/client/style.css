@@ -6,4 +6,5 @@
 
 body {
   background: linear-gradient(180deg, rgba(75,75,75,1) 0%, rgba(255,255,255,1) 100%) !important;
+  background-repeat: no-repeat !important;
 }

@@ -20,9 +20,10 @@ class BudgetPlanners extends React.Component {
     return (
       <Container>
         <Header as="h2" textAlign="center">Budget Planners</Header>
-        <CardGroup itemsPerRow={3}>
-          {planners.map((planner) => <PlannerCard key={planner._id} planner={planner} />)}
-        </CardGroup>
+        {planners.length === 0 ? <Header as="h3" textAlign="center">No planners found. Go to the Create Planner page to get started!</Header> :
+          <CardGroup itemsPerRow={3}>
+            {planners.map((planner) => <PlannerCard key={planner._id} planner={planner} />)}
+          </CardGroup>}
       </Container>
     );
   }

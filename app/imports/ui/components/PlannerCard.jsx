@@ -3,7 +3,7 @@ import { Button, Card, Header, Icon, Modal, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
-import { AutoForm, ErrorsField, NumField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, NumField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Budgets } from '../../api/budget/Budget';
@@ -45,27 +45,37 @@ class PlannerCard extends React.Component {
         this.reflectUpdate()));
   }
 
+  toUSD(value) {
+    return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  }
+
+  plannerCardColor(value) {
+    return (value < 0 ? 'red' : 'green');
+  }
+
   render() {
     return (
-      <Card color='green'>
+      <Card color={this.plannerCardColor(this.props.planner.endingBalance)}>
         <Card.Content>
           <Card.Header>{this.props.planner.month}, {this.props.planner.year}</Card.Header>
           <Card.Meta>
             <Header as='h4'>
-              Beginning Balance: {this.props.planner.initialBalance}
+              Beginning Balance: {this.toUSD(this.props.planner.initialBalance)}
             </Header>
           </Card.Meta>
           <Card.Description>
             <Header as='h5'> Income/Spending: </Header>
             {_.map(this.props.planner.changes,
-              (change, index) => <p key={index}> {change.name}: {change.amount}
-                <Icon color='red' name='trash alternate outline' onClick={() => this.removeItem(change)}/>
+              (change, index) => <p key={index}>
+                {change.amount < 0 ? <Icon color='red' name='minus'/> : <Icon color='green' name='add'/>}
+                {change.name}: {this.toUSD(change.amount)}
+                <Icon color='grey' name='trash alternate outline' onClick={() => this.removeItem(change)}/>
               </p>)}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Header as='h4'>
-            Ending Balance: {this.props.planner.endingBalance}
+          <Header as='h4' color={this.plannerCardColor(this.props.planner.endingBalance)}>
+            Ending Balance: {this.toUSD(this.props.planner.endingBalance)}
           </Header>
           <Modal
             basic
@@ -73,7 +83,7 @@ class PlannerCard extends React.Component {
             onOpen={() => this.setState({ prompt: true })}
             open={this.state.prompt}
             size='small'
-            trigger={<Button size='small' inverted color='green'>Add Spending/Income</Button>}
+            trigger={<Button size='small' inverted color={this.plannerCardColor(this.props.planner.endingBalance)}>Add Spending/Income</Button>}
           >
             <Header size='huge'>
               Add Spending/Income
@@ -86,10 +96,13 @@ class PlannerCard extends React.Component {
                   <ErrorsField/>
                 </Modal.Content>
                 <Modal.Actions>
+                  <br/>
                   <Button color='red' inverted onClick={() => this.setState({ prompt: false })}>
                     <Icon name='remove'/> Cancel
                   </Button>
-                  <SubmitField value='Create'/>
+                  <Button color='green' inverted onClick={() => this.submit()}>
+                    <Icon name='check'/> Create
+                  </Button>
                 </Modal.Actions>
               </Segment>
             </AutoForm>
