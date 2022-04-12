@@ -79,10 +79,10 @@ Shengtong Jin
  - Completed:
    - Budget plans schema
    - Setup MangoDB to store budget plans
+   - Clean up
  - Current:
    - Admin page
  - Next:
-   - Clean up
 
 Ian Manzano:
  - Completed:
