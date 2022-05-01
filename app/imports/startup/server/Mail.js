@@ -4,7 +4,8 @@ import { check } from 'meteor/check';
 
 if (Meteor.isServer) {
   Meteor.startup(() => {
-    process.env.MAIL_URL = 'smtps://lamtechmailguy@gmail.com:justbudgetproject369@smtp.gmail.com:465/';
+    // insert mail url below i.e. 'smtps://example-email@gmail.com:example-password@smtp.gmail.com:465/'
+    process.env.MAIL_URL = '';
   });
 }
 

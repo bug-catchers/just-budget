@@ -24,9 +24,8 @@ class Feedback extends React.Component {
 
     Meteor.call(
       'sendEmail',
-      (`${title} from ${owner}`),
+      (`${option}: ${title} from ${owner}`),
       (`${feedback}`),
-      (`${option}`),
     );
     formRef.reset();
   }
