@@ -1,4 +1,4 @@
-![ci-badge](https://github.com/bug-catchers/just-budget/actions/workflows/ci-just-budget/badge.svg)
+[![ci-just-budget](https://github.com/bug-catchers/just-budget/actions/workflows/ci.yml/badge.svg)](https://github.com/bug-catchers/just-budget/actions/workflows/ci.yml)
 
 Just Budget is a simple and straightforward to use budget management tool. Plan your monthly spending by entering your income and expenses, Just Budget will then calculate how much money you will have by the end of the month. Just Budget also allows you to track and view your spending from previous months, so you would never have to wonder where you’ve spent your money again!
 
