@@ -34,8 +34,8 @@ class PlannerCard extends React.Component {
   submit(changes) {
     Planners.collection.update(this.props.planner._id, { $addToSet: { changes } },
       (error) => (error ?
-        swal('Error', error.message, 'error') :
-        this.reflectUpdate()));
+        swal('Error', error.message, 'error') : this.reflectUpdate()));
+    this.setState({ prompt: false });
   }
 
   removeItem(changes) {
@@ -43,6 +43,10 @@ class PlannerCard extends React.Component {
       (error) => (error ?
         swal('Error', error.message, 'error') :
         this.reflectUpdate()));
+  }
+
+  deletePlanner(id) {
+    Planners.collection.remove(id);
   }
 
   toUSD(value) {
@@ -77,6 +81,7 @@ class PlannerCard extends React.Component {
           <Header as='h4' color={this.plannerCardColor(this.props.planner.endingBalance)}>
             Ending Balance: {this.toUSD(this.props.planner.endingBalance)}
           </Header>
+          <Button size='small' inverted color="red" onClick={() => this.deletePlanner(this.props.planner._id)}>Delete</Button>
           <Modal
             basic
             onClose={() => this.setState({ prompt: false })}
