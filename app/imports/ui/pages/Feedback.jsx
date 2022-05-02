@@ -24,9 +24,8 @@ class Feedback extends React.Component {
 
     Meteor.call(
       'sendEmail',
-      (`${title} from ${owner}`),
+      (`${option}: ${title} from ${owner}`),
       (`${feedback}`),
-      (`${option}`),
     );
     formRef.reset();
   }
@@ -41,7 +40,13 @@ class Feedback extends React.Component {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>
               <TextField name='title'/>
-              <SelectField name='option' showInlineError={true} placeholder={'Select one'} options={[{ label: 'Delete My Account', value: 'Delete My Account' }, { label: 'Do Not Delete My Account', value: 'Do Not Delete My Account' }]}/>
+              <SelectField name='option' showInlineError={true} placeholder={'Select one'}
+                options={[
+                  { label: 'Requesting Support', value: 'Requesting Support' },
+                  { label: 'Bug report', value: 'Bug report' },
+                  { label: 'Requesting Account/Data Removal', value: 'Requesting Account/Data Removal' },
+                  { label: 'Others', value: 'Others' },
+                ]}/>
               <LongTextField name='feedback'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
