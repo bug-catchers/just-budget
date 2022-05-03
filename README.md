@@ -54,6 +54,7 @@ meteor reset
 - [Repository](https://github.com/bug-catchers/just-budget)
 - [Wiki](https://github.com/bug-catchers/just-budget/wiki)
 - [Readme](https://github.com/bug-catchers/just-budget/blob/master/README.md)
+- [Documentation](https://github.com/bug-catchers/just-budget/blob/master/ICS%20427%20Report.pdf)
 - [Release](https://github.com/bug-catchers/just-budget/commits/v1.0.0)
 
 # Work
