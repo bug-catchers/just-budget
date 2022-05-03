@@ -37,11 +37,19 @@ I20220430-17:01:02.571(-10)? Monti APM: completed instrumenting the app
 
 5. You can now connect to http://localhost:3000/ to access the application.
 
+# Uninstall Just Budget
+1. Delete the file where Just Budget located.
+
 # Developer notes
 - We use [meteor-application-template-react](http://ics-software-engineering.github.io/meteor-application-template-react/) as a template for out project
 - For the release of Just Budget we removed the send email from the Feedback page due to security reasons, if you were to deploy Just Budget the email feature will _**NOT**_ work.
 - The feedback email is a proof of concept on how we could maintain the project and response to future threats.
 - The admin page did not implement as planned due to security reasons. Since we are using meteor for our application, meteor's default is that users would not able to modify or delete an account on the client-side, the function calls ```Meteor.users.remove()``` where prohibited because meteor does not want to take any security risks since this function call might mess up the database if there is vulnerability. So we decide to add an option on the feedback page, where users can make a request to delete their account. If we deployed the application, once we receive the request, we will manually log on to the Mongo database and remove the account information from the database.
+- To reset the application, open command prompt where the application located and run these commands:
+```
+cd app
+meteor reset
+```
 # Links
 - [Repository](https://github.com/bug-catchers/just-budget)
 - [Wiki](https://github.com/bug-catchers/just-budget/wiki)
