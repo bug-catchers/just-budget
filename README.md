@@ -42,9 +42,10 @@ I20220430-17:01:02.571(-10)? Monti APM: completed instrumenting the app
 - For the release of Just Budget we removed the send email from the Feedback page due to security reasons, if you were to deploy Just Budget the email feature will _**NOT**_ work.
 - The feedback email is a proof of concept on how we could maintain the project and response to future threats.
 # Links
-[Repository](https://github.com/bug-catchers/just-budget)
-[Wiki](https://github.com/bug-catchers/just-budget/wiki)
-[Readme](https://github.com/bug-catchers/just-budget/blob/master/README.md)
+- [Repository](https://github.com/bug-catchers/just-budget)
+- [Wiki](https://github.com/bug-catchers/just-budget/wiki)
+- [Readme](https://github.com/bug-catchers/just-budget/blob/master/README.md)
+- [Release](https://github.com/bug-catchers/just-budget/commits/v1.0.0)
 
 # Work
 Chak Hon Lam:
